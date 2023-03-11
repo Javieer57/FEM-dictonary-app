@@ -1,2 +1,4 @@
 import "normalize.css";
-import "./styles.css";
+import "./sass/styles.scss";
+
+import "./js/dropdown.js";
