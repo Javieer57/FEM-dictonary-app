@@ -11,8 +11,10 @@ html(lang="en")
       header.header 
         img(src="images/logo.svg", alt="logo").header__logo 
         .header__settings
-          include dropdown.pug
+          include pug/dropdown.pug
           span.header__settings-line
-          include switch.pug
-      form
-        include search.pug
+          include pug/switch.pug
+      form#search-form
+        include pug/search.pug
+
+      
