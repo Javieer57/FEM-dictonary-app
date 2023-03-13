@@ -1,0 +1,26 @@
+- 
+    const buttons = [
+        {
+            name: 'Sans Serif',
+            font: "'Inter', sans-serif"
+        },
+        {
+            name: 'Serif',
+            font: "'Lora', serif"
+        },
+        {
+            name: 'Mono',
+            font: "'Inconsolata', monospace"
+        }
+    ]
+
+.dropdown(aria-haspopup="true", aria-expanded="false")
+    button.dropdown__button(aria-controls="dropdown-menu")
+        span Sans Serif
+        svg(viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M1 1L7 7L13 1" stroke="#A445ED" stroke-width="1.5")
+    ul.dropdown__menu.dropdown__menu#dropdown-menu(role="menu", aria-hidden="true")
+        each item in buttons
+            li.dropdown__menuitem
+                button(style="font-family: " + item.font + ";", role="menuitem")
+                    | #{item.name}

@@ -9,15 +9,14 @@ module.exports = {
   },
   devServer: {
     port: 9000,
-    // without this, doesn't reload when html files changes
+    // without this, doesn't reload when pug files changes
     watchFiles: "src/**/*.*",
   },
   module: {
     rules: [
       {
-        // html-loader is needed to output images
-        test: /\.html$/,
-        use: ["html-loader"],
+        test: /\.pug$/,
+        use: ["html-loader", "pug-html-loader"],
       },
       {
         test: /\.(png|jpg|gif|jpeg|svg)$/,
@@ -36,7 +35,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: `./src/index.html`,
+      template: `./src/index.pug`,
     }),
     new MiniCssExtractPlugin(),
   ],
