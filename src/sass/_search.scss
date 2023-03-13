@@ -18,14 +18,11 @@
     font-family: inherit;
     font-weight: 700;
 
-    &:invalid {
-      border-color: #ff5252;
-      box-shadow: none;
+    &:focus,
+    &:focus-visible {
+      border-color: #a445ed;
+      outline: none;
     }
-    // &:focus {
-    //   background-color: #fff;
-    //   border: 1px solid #e2e8f0;
-    // }
 
     &::placeholder {
       // color: #a2a6a5;
@@ -47,6 +44,26 @@
       width: 1rem;
       height: 1rem;
       fill: black;
+    }
+  }
+
+  .input__error {
+    display: none;
+    color: #ff5252;
+    position: absolute;
+  }
+
+  &.input-with-icon--error {
+    input {
+      border-color: #ff5252;
+
+      &:focus {
+        border-color: #ff5252;
+      }
+    }
+
+    .input__error {
+      display: block;
     }
   }
 }
