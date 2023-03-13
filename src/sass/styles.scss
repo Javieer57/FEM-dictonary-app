@@ -2,6 +2,11 @@
 @forward "header";
 @forward "dropdown";
 @forward "switch";
+@forward "search";
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Inter", sans-serif;
