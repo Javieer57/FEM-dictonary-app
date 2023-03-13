@@ -14,7 +14,6 @@ function toggleDropdown() {
 
 function handleButtonKeydown(event) {
   if (event.code === "Space" || event.code === "Enter") {
-    // Space and Enter keys
     event.preventDefault();
     toggleDropdown();
   } else if (event.code === "Escape") {

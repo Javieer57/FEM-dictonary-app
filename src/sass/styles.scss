@@ -1,6 +1,7 @@
 @use "utils" as *;
 @forward "header";
 @forward "dropdown";
+@forward "switch";
 
 body {
   font-family: "Inter", sans-serif;
