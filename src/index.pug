@@ -4,6 +4,13 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Inter:wght@400;700&family=Lora:wght@400;700&display=swap", rel="stylesheet")
     title Dictionary App
   body
-    h1 hola
+    .dictionary-container
+      header.header 
+        img(src="images/logo.svg", alt="logo").header__logo 
+        .header__settings
+
+          include dropdown.pug
+

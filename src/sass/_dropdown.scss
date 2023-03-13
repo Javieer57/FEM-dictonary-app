@@ -1,0 +1,65 @@
+@use "utils" as *;
+
+.dropdown {
+  position: relative;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: transparent;
+    color: rgb(45, 45, 45);
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+
+    svg {
+      width: rem(13);
+      height: rem(9);
+    }
+
+    &:hover {
+      color: rgb(var(--purple));
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+    background-color: #fff;
+    border-radius: 16px;
+    list-style: none;
+    z-index: 1;
+    padding: 20px;
+    gap: 16px;
+    width: 160px;
+  }
+
+  &__menuitem button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    font-weight: 700;
+    font-size: 18px;
+
+    &:hover {
+      color: rgb(var(--purple));
+    }
+  }
+
+  &--open {
+    .dropdown__button {
+      color: rgb(var(--purple));
+    }
+
+    .dropdown__menu {
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0px 0.3125rem 1.875rem rgba(0, 0, 0, 0.1);
+    }
+  }
+}
