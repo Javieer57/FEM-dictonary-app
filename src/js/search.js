@@ -1,3 +1,5 @@
+import { showResults } from "./showResults.js";
+
 const form = document.getElementById("search-form");
 const input = document.getElementById("search-input");
 const error = document.getElementById("input-error");
@@ -23,10 +25,6 @@ const fetchWord = async (word) => {
   } catch (error) {
     console.error(error);
   }
-};
-
-const showResults = (data) => {
-  console.log(data);
 };
 
 const showNotFound = (data) => {

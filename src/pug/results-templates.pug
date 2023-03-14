@@ -1,0 +1,27 @@
+template#results-header
+    header.results__header
+        .results__word
+            h2.results__title  
+            p.results__pronunciation 
+                span.sr-only Pronunciation: 
+                span.results__pronunciation-label
+
+        .results__controls
+            button.results__play-button(aria-label="Play pronunciation")
+
+template#results-meanings
+    .results__details
+        p.results__part-of-speech
+            strong.sr-only Part of speech:
+            span.results__part-of-speech-value 
+            span.separator-line 
+
+        h3.results__subtitle Meaning:
+
+        ul.results__list--meaning
+            li.results__item 
+        div.results__alternatives
+            h3.results__subtitle Synonyms:
+            ul.results__list--alternatives
+                li.results__item electronic keyboard,
+                li.results__item electronic keyboard
