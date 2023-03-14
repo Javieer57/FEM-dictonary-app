@@ -1,19 +1,29 @@
-import data from "./API.json";
-
 const resultsContainer = document.getElementById("results");
-const headerTemplate = document
-  .getElementById("results-header")
-  .content.cloneNode(true);
+const headerTemplate = document.getElementById("results-header").content;
 const meaningsTemplate = document.getElementById("results-meanings").content;
+const sourceTemplate = document.getElementById("results-source").content;
 
 export const showResults = (data) => {
+  resultsContainer.innerHTML = "";
   const header = getHeader(data);
   const meanings = getMeanings(data);
+  const source = getSource(data);
 
   resultsContainer.appendChild(header);
+
   meanings.forEach((meaning) => {
     resultsContainer.appendChild(meaning);
   });
+
+  resultsContainer.appendChild(source);
+};
+
+const getSource = (data) => {
+  const source = sourceTemplate.cloneNode(true);
+  const sourceLink = source.querySelector("a");
+  sourceLink.href = data[0].sourceUrls[0];
+  sourceLink.textContent = sourceLink.href;
+  return source;
 };
 
 const getHeader = (data) => {
@@ -81,5 +91,3 @@ const getMeanings = (data) => {
 
   return fragmentsArray;
 };
-
-showResults(data);
