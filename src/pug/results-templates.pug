@@ -1,0 +1,34 @@
+template#results-header
+    header.results__header
+        .results__word
+            h2.results__title#title 
+            p.results__pronunciation 
+                span.sr-only Pronunciation: 
+                span.results__pronunciation-label#IPA
+
+        .results__controls
+            button.results__play-button#button(aria-label="Play pronunciation")
+
+template#results-meanings
+    section.results__details
+        p.results__part-of-speech
+            strong.sr-only Part of speech:
+            span.results__part-of-speech-value 
+            span.separator-line 
+
+        h3.results__subtitle Meaning:
+
+        ul.results__list--meaning
+            li.results__item 
+
+        div.results__alternatives
+            h3.results__subtitle 
+            p.results__list--alternatives
+
+template#results-source 
+    section.results__source
+        span.separator-line
+        p.results__source-label
+            strong Source
+            a(href="" target="_blank" rel="noopener noreferrer")
+            i.fa-solid.fa-arrow-up-right-from-square

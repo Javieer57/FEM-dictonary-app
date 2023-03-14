@@ -1,0 +1,35 @@
+@use "utils" as *;
+
+.results__play-button {
+  position: relative;
+  display: inline-block;
+  height: rem(75);
+  width: rem(75);
+  background-color: rgba(164, 69, 237, 0.25);
+  border-radius: 50%;
+  border: none;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: #a445ed;
+    outline: none;
+
+    &::after {
+      background-color: rgb(255, 255, 255);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-35%, -50%);
+    width: rem(21);
+    height: rem(21);
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    background-color: #a445ed;
+    transition: all 0.3s ease;
+  }
+}

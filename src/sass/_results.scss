@@ -1,0 +1,131 @@
+@use "utils" as *;
+
+.results {
+  &__header {
+    margin-bottom: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: rem(64);
+    line-height: rem(77);
+    color: #2d2d2d;
+    margin: rem(10);
+  }
+
+  &__pronunciation {
+    margin: 0;
+
+    &-label {
+      font-weight: 400;
+      font-size: rem(24);
+      line-height: rem(29);
+      color: #a445ed;
+    }
+  }
+}
+
+.results__details {
+  > *:not(:last-child) {
+    margin-bottom: rem(40);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: rem(40);
+  }
+}
+
+.results__part-of-speech {
+  margin-top: 0;
+  align-items: center;
+  display: inline-flex;
+  gap: rem(24);
+  width: 100%;
+
+  &-value {
+    font-style: italic;
+    font-weight: 700;
+    font-size: rem(24);
+    line-height: rem(29);
+  }
+}
+
+.results__subtitle {
+  font-weight: 400;
+  font-size: rem(20);
+  color: #757575;
+  margin-top: 0;
+}
+
+.results__list--meaning {
+  .results__item {
+    padding-left: rem(20);
+    font-size: rem(18);
+    line-height: rem(24);
+
+    &::marker {
+      color: #8f19e8;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
+}
+
+.results__alternatives {
+  display: flex;
+  align-items: start;
+  gap: rem(20);
+
+  &:not(:last-child) {
+    margin-bottom: rem(40);
+  }
+
+  .results__subtitle {
+    margin: 0;
+  }
+
+  .results__list--alternatives {
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: rem(24);
+    margin: 0;
+    color: #a445ed;
+  }
+}
+
+.separator-line {
+  display: block;
+  background-color: #e9e9e9;
+  height: 1px;
+  width: 100%;
+}
+
+.results__source {
+  &-label {
+    margin-top: rem(20);
+    line-height: rem(17);
+    font-size: rem(14);
+
+    strong {
+      color: #757575;
+      text-decoration: underline;
+      font-weight: 400;
+      text-decoration-color: #757575;
+    }
+
+    a {
+      color: #2d2d2d;
+      margin-left: rem(20);
+      margin-right: rem(10);
+    }
+
+    i {
+      color: #757575;
+      font-size: rem(12);
+    }
+  }
+}

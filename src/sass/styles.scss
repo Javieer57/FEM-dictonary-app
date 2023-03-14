@@ -3,6 +3,8 @@
 @forward "dropdown";
 @forward "switch";
 @forward "search";
+@forward "results";
+@forward "play-button";
 
 * {
   box-sizing: border-box;
@@ -20,4 +22,8 @@ body {
   @media (min-width: rem(768)) {
     padding-top: rem(58);
   }
+}
+
+ul {
+  margin: 0;
 }
