@@ -11,7 +11,7 @@
   &__title {
     font-size: rem(64);
     line-height: rem(77);
-    color: #2d2d2d;
+    color: var(--primary-text-color);
     margin: rem(10);
   }
 
@@ -22,7 +22,7 @@
       font-weight: 400;
       font-size: rem(24);
       line-height: rem(29);
-      color: #a445ed;
+      color: var(--purple);
     }
   }
 }
@@ -55,7 +55,7 @@
 .results__subtitle {
   font-weight: 400;
   font-size: rem(20);
-  color: #757575;
+  color: var(--light-gray);
   margin-top: 0;
 }
 
@@ -111,10 +111,10 @@
     font-size: rem(14);
 
     strong {
-      color: #757575;
+      color: var(--light-gray);
       text-decoration: underline;
       font-weight: 400;
-      text-decoration-color: #757575;
+      text-decoration-color: var(--light-gray);
     }
 
     a {
@@ -124,7 +124,7 @@
     }
 
     i {
-      color: #757575;
+      color: var(--light-gray);
       font-size: rem(12);
     }
   }
