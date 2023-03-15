@@ -49,7 +49,7 @@
   }
 
   &[aria-pressed="true"] {
-    background-color: rgb(var(--purple));
+    background-color: var(--purple);
 
     .slider:before {
       transform: translateX(22px);
