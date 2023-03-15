@@ -1,4 +1,4 @@
-@use "utils" as *;
+@use "../utils" as *;
 
 .toggle-switch__container {
   display: flex;
@@ -15,7 +15,7 @@
   display: inline-block;
   width: 2.5rem;
   height: 1.25rem;
-  background-color: rgb(117, 117, 117);
+  background-color: var(--light-gray);
   border-radius: 30px;
   border: none;
   outline: none;
@@ -37,7 +37,7 @@
       //   left: 4px;
       left: 0;
       bottom: 4px;
-      background-color: #fff;
+      background-color: var(--white);
       border-radius: 50%;
       transition: all 0.2s ease-in-out;
       transform: translateX(4px);
