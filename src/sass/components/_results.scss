@@ -118,7 +118,7 @@
     }
 
     a {
-      color: #2d2d2d;
+      color: var(--foreground);
       margin-left: rem(20);
       margin-right: rem(10);
     }
