@@ -5,13 +5,14 @@
   margin-bottom: 1rem;
 
   input {
-    padding: 1.25rem 4rem 1.25rem 1.5rem;
+    padding: rem(20);
+    padding-right: rem(40); // 40px for the icon
     line-height: 1.25;
     appearance: none;
-    color: var(--soft-grey);
+    color: var(--foreground);
     border: 1px solid transparent;
-    border-radius: 1rem;
-    font-size: 1.25rem;
+    border-radius: rem(16);
+    font-size: rem(20);
     width: 100%;
     transition: all 0.3s ease;
     background-color: var(--secondary-background);
@@ -25,7 +26,7 @@
     }
 
     &::placeholder {
-      color: rgba(var(--primary-text-color), 0.25);
+      color: rgba(var(--foreground), 0.25);
       font-size: rem(20);
     }
   }
@@ -35,15 +36,9 @@
     right: 0;
     top: 0;
     bottom: 0;
-    padding-right: rem(16);
+    padding-right: rem(24);
     align-items: center;
     display: flex;
-
-    svg {
-      width: rem(16);
-      height: rem(16);
-      fill: black;
-    }
   }
 
   .input__error {
@@ -65,4 +60,11 @@
       display: block;
     }
   }
+}
+
+.search-icon {
+  height: rem(15);
+  width: rem(15);
+  mask: url("../images/icon-search.svg") no-repeat center / cover;
+  background: var(--purple);
 }

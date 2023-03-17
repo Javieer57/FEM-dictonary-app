@@ -1,10 +1,11 @@
-import { showResults, showNotFound } from "./showResults.js";
+import { showResults, showNotFound, clearResults } from "./showResults.js";
 
 const form = document.getElementById("search-form");
 const input = document.getElementById("search-input");
 const error = document.getElementById("input-error");
 
 const showError = () => {
+  clearResults();
   input.parentNode.classList.add("input-with-icon--error");
   error.innerText = "Whoops, can’t be empty…";
   input.focus();
@@ -43,6 +44,7 @@ form.addEventListener("submit", (e) => {
 });
 
 input.addEventListener("keydown", function (e) {
+  input.parentNode.classList.remove("input-with-icon--error");
   const previousValue = e.target.value;
   const pressedKey = e.key;
   const cursorPosition = e.target.selectionStart;

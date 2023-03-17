@@ -11,8 +11,8 @@ $black: #050505;
   --purple: #a445ed;
   --red: #ff5252;
   --white: #{$white};
-  --dark-gray: $dark-gray;
-  --secondary-background: $very-light-gray;
+  --dark-gray: #{$dark-gray};
+  --secondary-background: #{$very-light-gray};
   --background: #{$white};
 }
 

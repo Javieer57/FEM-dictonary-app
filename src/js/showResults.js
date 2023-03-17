@@ -4,7 +4,7 @@ const meaningsTemplate = document.getElementById("results-meanings").content;
 const sourceTemplate = document.getElementById("results-source").content;
 const notFoundTemplate = document.getElementById("results-not-found").content;
 
-const clearResults = () => {
+export const clearResults = () => {
   resultsContainer.innerHTML = "";
 };
 
