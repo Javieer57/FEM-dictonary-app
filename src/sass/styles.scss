@@ -25,3 +25,13 @@ body {
 ul {
   margin: 0;
 }
+
+// delete all margin top of all h tags
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}

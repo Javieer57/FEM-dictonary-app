@@ -2,9 +2,14 @@ const resultsContainer = document.getElementById("results");
 const headerTemplate = document.getElementById("results-header").content;
 const meaningsTemplate = document.getElementById("results-meanings").content;
 const sourceTemplate = document.getElementById("results-source").content;
+const notFoundTemplate = document.getElementById("results-not-found").content;
+
+const clearResults = () => {
+  resultsContainer.innerHTML = "";
+};
 
 export const showResults = (data) => {
-  resultsContainer.innerHTML = "";
+  clearResults();
   const header = getHeader(data);
   const meanings = getMeanings(data);
   const source = getSource(data);
@@ -90,4 +95,10 @@ const getMeanings = (data) => {
   });
 
   return fragmentsArray;
+};
+
+export const showNotFound = () => {
+  clearResults();
+  const clone = notFoundTemplate.cloneNode(true);
+  resultsContainer.appendChild(clone);
 };
