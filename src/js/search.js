@@ -1,4 +1,4 @@
-import { showResults } from "./showResults.js";
+import { showResults, showNotFound } from "./showResults.js";
 
 const form = document.getElementById("search-form");
 const input = document.getElementById("search-input");
@@ -17,18 +17,14 @@ const fetchWord = async (word) => {
     );
     const data = await resp.json();
 
-    if (resp.ok) {
-      showResults(data);
+    if (resp.status === 404) {
+      showNotFound();
     } else {
-      showNotFound(data);
+      showResults(data);
     }
   } catch (error) {
     console.error(error);
   }
-};
-
-const showNotFound = (data) => {
-  console.log(data);
 };
 
 form.addEventListener("submit", (e) => {

@@ -129,3 +129,25 @@
     }
   }
 }
+
+.results__not-found {
+  margin-top: rem(130);
+  text-align: center;
+
+  span {
+    font-size: rem(64);
+    margin-bottom: rem(45);
+    display: inline-block;
+  }
+
+  h3 {
+    margin-bottom: rem(25);
+    font-size: rem(20);
+  }
+
+  p {
+    color: var(--light-gray);
+    font-size: rem(18);
+    line-height: rem(24);
+  }
+}
