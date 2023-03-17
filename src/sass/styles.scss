@@ -26,7 +26,6 @@ ul {
   margin: 0;
 }
 
-// delete all margin top of all h tags
 h1,
 h2,
 h3,
@@ -39,4 +38,8 @@ h6 {
 ::selection {
   background-color: var(--purple);
   color: var(--white);
+}
+
+button:focus {
+  outline: none;
 }

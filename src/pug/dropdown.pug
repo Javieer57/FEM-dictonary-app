@@ -1,26 +1,25 @@
 - 
     const buttons = [
         {
-            name: 'Sans Serif',
+            alias: 'Sans Serif',
             font: "'Inter', sans-serif"
         },
         {
-            name: 'Serif',
+            alias: 'Serif',
             font: "'Lora', serif"
         },
         {
-            name: 'Mono',
+            alias: 'Mono',
             font: "'Inconsolata', monospace"
         }
     ]
 
-.dropdown(aria-haspopup="true", aria-expanded="false")
+.dropdown.dropdown--open(aria-haspopup="true" aria-expanded="false")
     button.dropdown__button(aria-controls="dropdown-menu")
-        span Sans Serif
-        svg(viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg")
-            path(d="M1 1L7 7L13 1" stroke="#A445ED" stroke-width="1.5")
-    ul.dropdown__menu.dropdown__menu#dropdown-menu(role="menu", aria-hidden="true")
+        span
+        i.arrow-down-icon
+    ul.dropdown__menu(role="menu" aria-hidden="true")
         each item in buttons
-            li.dropdown__menuitem
-                button(style="font-family: " + item.font + ";", role="menuitem")
-                    | #{item.name}
+            li.dropdown__menu-item
+                button(style="font-family: " + item.font + ";" role="menuitem" data-font=item.font data-font-alias=item.alias aria-label='Change font to #{item.alias}')
+                    | #{item.alias}
