@@ -77,7 +77,7 @@
 
 .results__alternatives {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: rem(20);
 
   &:not(:last-child) {
