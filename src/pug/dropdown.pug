@@ -1,0 +1,25 @@
+- 
+    const buttons = [
+        {
+            alias: 'Sans Serif',
+            font: "'Inter', sans-serif"
+        },
+        {
+            alias: 'Serif',
+            font: "'Lora', serif"
+        },
+        {
+            alias: 'Mono',
+            font: "'Inconsolata', monospace"
+        }
+    ]
+
+.dropdown(aria-haspopup="true" aria-expanded="false")
+    button.dropdown__button(aria-controls="dropdown-menu")
+        span
+        i.arrow-down-icon
+    ul.dropdown__menu(role="menu" aria-hidden="true")
+        each item in buttons
+            li.dropdown__menu-item
+                button(style="font-family: " + item.font + ";" role="menuitem" data-font=item.font data-font-alias=item.alias aria-label='Change font to #{item.alias}')
+                    | #{item.alias}

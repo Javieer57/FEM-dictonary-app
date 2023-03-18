@@ -1,0 +1,26 @@
+$dark-gray: #1f1f1f;
+$very-light-gray: #f4f4f4;
+$white: #fff;
+$black: #050505;
+$purple: #a445ed;
+
+:root {
+  --foreground: #2d2d2d;
+  --medium-gray: #3a3a3a;
+  --light-gray: #757575;
+  --off-white: #e9e9e9;
+  --purple: #{$purple};
+  --red: #ff5252;
+  --white: #{$white};
+  --dark-gray: #{$dark-gray};
+  --secondary-background: #{$very-light-gray};
+  --background: #{$white};
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+  --secondary-background: #{$dark-gray};
+  --foreground: #{$white};
+  --background: #{$black};
+  --shadow: #{$purple};
+}

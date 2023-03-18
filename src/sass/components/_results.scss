@@ -1,0 +1,148 @@
+@use "../utils" as *;
+
+.results {
+  &__header {
+    margin-bottom: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: rem(64);
+    line-height: rem(77);
+    color: var(--primary-text-color);
+    margin: rem(10);
+  }
+
+  &__pronunciation {
+    margin: 0;
+
+    &-label {
+      font-weight: 400;
+      font-size: rem(24);
+      line-height: rem(29);
+      color: var(--purple);
+    }
+  }
+}
+
+.results__details {
+  > *:not(:last-child) {
+    margin-bottom: rem(40);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: rem(40);
+  }
+}
+
+.results__part-of-speech {
+  margin-top: 0;
+  align-items: center;
+  display: inline-flex;
+  gap: rem(24);
+  width: 100%;
+
+  &-value {
+    font-style: italic;
+    font-weight: 700;
+    font-size: rem(24);
+    line-height: rem(29);
+  }
+}
+
+.results__subtitle {
+  font-weight: 400;
+  font-size: rem(20);
+  color: var(--light-gray);
+  margin-top: 0;
+}
+
+.results__list--meaning {
+  .results__item {
+    padding-left: rem(20);
+    font-size: rem(18);
+    line-height: rem(24);
+
+    &::marker {
+      color: #8f19e8;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
+}
+
+.results__alternatives {
+  display: flex;
+  align-items: flex-start;
+  gap: rem(20);
+
+  &:not(:last-child) {
+    margin-bottom: rem(40);
+  }
+
+  .results__subtitle {
+    margin: 0;
+  }
+
+  .results__list--alternatives {
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: rem(24);
+    margin: 0;
+    color: #a445ed;
+  }
+}
+
+.separator-line {
+  display: block;
+  background-color: #e9e9e9;
+  height: 1px;
+  width: 100%;
+}
+
+.results__source {
+  &-label {
+    margin-top: rem(20);
+    line-height: rem(17);
+    font-size: rem(14);
+
+    strong {
+      color: var(--light-gray);
+      text-decoration: underline;
+      font-weight: 400;
+      text-decoration-color: var(--light-gray);
+    }
+
+    a {
+      color: var(--foreground);
+      margin-left: rem(20);
+      margin-right: rem(10);
+    }
+  }
+}
+
+.results__not-found {
+  margin-top: rem(130);
+  text-align: center;
+
+  span {
+    font-size: rem(64);
+    margin-bottom: rem(45);
+    display: inline-block;
+  }
+
+  h3 {
+    margin-bottom: rem(25);
+    font-size: rem(20);
+  }
+
+  p {
+    color: var(--light-gray);
+    font-size: rem(18);
+    line-height: rem(24);
+  }
+}

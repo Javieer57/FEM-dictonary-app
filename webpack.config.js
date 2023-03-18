@@ -3,21 +3,26 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+  // devtool: "source-map",
   entry: path.resolve(__dirname, "src/index.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
     port: 9000,
-    // without this, doesn't reload when html files changes
+    // without this, doesn't reload when pug files changes
     watchFiles: "src/**/*.*",
   },
   module: {
     rules: [
       {
-        // html-loader is needed to output images
-        test: /\.html$/,
-        use: ["html-loader"],
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
+      {
+        test: /\.pug$/,
+        use: ["html-loader", "pug-html-loader"],
       },
       {
         test: /\.(png|jpg|gif|jpeg|svg)$/,
@@ -30,13 +35,21 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: { importLoaders: 1 },
+          },
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: `./src/index.html`,
+      template: `./src/index.pug`,
     }),
     new MiniCssExtractPlugin(),
   ],
