@@ -3,6 +3,16 @@ const headerTemplate = document.getElementById("results-header").content;
 const meaningsTemplate = document.getElementById("results-meanings").content;
 const sourceTemplate = document.getElementById("results-source").content;
 const notFoundTemplate = document.getElementById("results-not-found").content;
+const loadingSpinner = document.getElementById("spinner-wrapper");
+
+export const showSpinner = () => {
+  clearResults();
+  loadingSpinner.classList.remove("hidden");
+};
+
+export const hideSpinner = () => {
+  loadingSpinner.classList.add("hidden");
+};
 
 export const clearResults = () => {
   resultsContainer.innerHTML = "";

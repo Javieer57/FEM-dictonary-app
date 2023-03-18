@@ -19,7 +19,12 @@ html(lang="en")
       form#search-form
         include pug/search.pug
 
-      .results#results
-        include pug/results-templates.pug
+      .spinner-wrapper.hidden#spinner-wrapper
+        .spinner
+        p.sr-only Loading...
+
+      .results#results(aria-live="polite" aria-atomic="true" aria-relevant="additions")
+
+      include pug/results-templates.pug
 
 
