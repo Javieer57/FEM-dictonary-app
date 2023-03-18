@@ -56,12 +56,3 @@
     }
   }
 }
-
-.arrow-down-icon {
-  display: inline-block;
-  width: rem(12);
-  height: rem(7);
-  mask: url("../images/icon-arrow-down.svg") no-repeat center / cover;
-  background: var(--purple);
-  transition: all 0.3s ease-in-out;
-}
