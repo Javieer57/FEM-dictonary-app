@@ -81,15 +81,6 @@
   }
 }
 
-.moon-icon {
-  display: inline-block;
-  height: rem(22);
-  width: rem(22);
-  mask: url("../images/icon-moon.svg") no-repeat center / cover;
-  background: var(--light-gray);
-  transition: all 0.3s ease-in-out;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;

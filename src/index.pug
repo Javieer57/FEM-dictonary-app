@@ -5,12 +5,13 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Inter:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet")
+    link(rel="icon" type="image/png" href="images/favicon-32x32.png")
     script(src="https://kit.fontawesome.com/d71fee4e13.js" crossorigin="anonymous")
     title Dictionary App
   body
     .dictionary-container
       header.header 
-        img(src="images/logo.svg" alt="logo").header__logo 
+        i.logo-icon
         .header__settings
           include pug/dropdown.pug
           span.header__settings-line
