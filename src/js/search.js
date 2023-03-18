@@ -1,4 +1,10 @@
-import { showResults, showNotFound, clearResults } from "./showResults.js";
+import {
+  showResults,
+  showNotFound,
+  clearResults,
+  showSpinner,
+  hideSpinner,
+} from "./showResults.js";
 
 const form = document.getElementById("search-form");
 const input = document.getElementById("search-input");
@@ -12,11 +18,14 @@ const showError = () => {
 };
 
 const fetchWord = async (word) => {
+  showSpinner();
   try {
     const resp = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
     );
     const data = await resp.json();
+
+    hideSpinner();
 
     if (resp.status === 404) {
       showNotFound();
@@ -40,6 +49,7 @@ form.addEventListener("submit", (e) => {
 
   input.parentNode.classList.remove("input-with-icon--error");
   error.innerText = "";
+  clearResults();
   fetchWord(inputValue);
 });
 
