@@ -1,26 +1,41 @@
-$dark-gray: #1f1f1f;
-$very-light-gray: #f4f4f4;
-$white: #fff;
-$black: #050505;
-$purple: #a445ed;
+@use "functions" as *;
+
+$black-500: #3a3a3a;
+$black-600: #2d2d2d;
+$black-700: #1f1f1f;
+$black-800: #050505;
+$black-900: #000000;
+
+$gray-100: #e9e9e9;
+$gray-500: #757575;
+
+$white-100: #f4f4f4;
+$white-900: #ffffff;
+
+$red-500: #ff5252;
+$violet-600: #a445ed;
+
+$light-theme-shadow: shadow($black-900, -0.9);
+$dark-theme-shadow: shadow($violet-600);
 
 :root {
-  --foreground: #2d2d2d;
-  --medium-gray: #3a3a3a;
-  --light-gray: #757575;
-  --off-white: #e9e9e9;
-  --purple: #{$purple};
-  --red: #ff5252;
-  --white: #{$white};
-  --dark-gray: #{$dark-gray};
-  --secondary-background: #{$very-light-gray};
-  --background: #{$white};
-  --shadow: rgba(0, 0, 0, 0.1);
+  --background: #{$white-900};
+  --contrast-separators: #{$gray-100};
+  --contrast: #{$violet-600};
+  --error: #{$red-500};
+  --foreground: #{$black-600};
+  --secondary-background: #{$white-100};
+  --secondary-text: #{$gray-500};
+  --separators: #{$gray-100};
+  --shadow: #{$light-theme-shadow};
+  --white: #{$white-900};
 }
 
 .dark-mode {
-  --secondary-background: #{$dark-gray};
-  --foreground: #{$white};
-  --background: #{$black};
-  --shadow: #{$purple};
+  --background: #{$black-800};
+  --contrast-separators: #{$gray-100};
+  --foreground: #{$white-900};
+  --secondary-background: #{$black-700};
+  --separators: #{$black-500};
+  --shadow: #{$dark-theme-shadow};
 }

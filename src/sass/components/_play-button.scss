@@ -12,7 +12,7 @@
 
   &:hover,
   &:focus {
-    background-color: var(--purple);
+    background-color: var(--contrast);
     outline: none;
 
     &::after {
@@ -29,7 +29,7 @@
     width: rem(21);
     height: rem(21);
     clip-path: polygon(100% 50%, 0 0, 0 100%);
-    background-color: var(--purple);
+    background-color: var(--contrast);
     transition: all 0.3s ease;
   }
 }

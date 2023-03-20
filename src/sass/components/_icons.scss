@@ -10,11 +10,16 @@
 
 .moon-icon {
   display: inline-block;
-  @include icon(rem(22), rem(22), "../images/icon-moon.svg", var(--light-gray));
+  @include icon(
+    rem(22),
+    rem(22),
+    "../images/icon-moon.svg",
+    var(--secondary-text)
+  );
 }
 
 .search-icon {
-  @include icon(rem(15), rem(15), "../images/icon-search.svg", var(--purple));
+  @include icon(rem(15), rem(15), "../images/icon-search.svg", var(--contrast));
 }
 
 .arrow-down-icon {
@@ -23,7 +28,7 @@
     rem(7),
     rem(12),
     "../images/icon-arrow-down.svg",
-    var(--purple)
+    var(--contrast)
   );
 }
 
@@ -33,11 +38,11 @@
     rem(12),
     rem(12),
     "../images/icon-new-window.svg",
-    var(--light-gray)
+    var(--secondary-text)
   );
 }
 
 .logo-icon {
   display: inline-block;
-  @include icon(rem(34), rem(30), "../images/logo.svg", var(--light-gray));
+  @include icon(rem(34), rem(30), "../images/logo.svg", var(--secondary-text));
 }
