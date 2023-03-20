@@ -9,12 +9,8 @@ html(lang="en")
     title Dictionary App
   body
     .dictionary-container
-      header.header 
-        i.logo-icon
-        .header__settings
-          include pug/dropdown.pug
-          span.header__settings-line
-          include pug/switch.pug
+      include pug/header.pug
+
       form#search-form
         include pug/search.pug
 
@@ -22,7 +18,7 @@ html(lang="en")
         p.sr-only Loading...
         .spinner
 
-      .results#results(aria-live="polite" aria-atomic="true" aria-relevant="additions")
+      .results#results(aria-live="polite" aria-atomic="true")
 
       include pug/results-templates.pug
 

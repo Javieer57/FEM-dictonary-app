@@ -28,12 +28,22 @@
   margin-bottom: rem(20);
 }
 
+.mb-15 {
+  margin-bottom: rem(15);
+}
+
 .mb-10 {
   margin-bottom: rem(10);
 }
 
 .mb-0 {
   margin-bottom: 0;
+}
+
+.vertical-separator {
+  align-self: stretch;
+  width: 1px;
+  background: var(--contrast-separators);
 }
 
 .separator-line {
@@ -77,4 +87,8 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.underline {
+  text-decoration: underline;
 }

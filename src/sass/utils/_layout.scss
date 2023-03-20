@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.gap-24 {
+  gap: rem(24);
+}
+
+.gap-16 {
+  gap: rem(16);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.p-left-20 {
+  padding-left: rem(20);
+}

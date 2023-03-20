@@ -1,5 +1,5 @@
 template#results-header
-    header.results__header
+    header.mb-40.d-flex.align-items-center.justify-content-between
         div
             h2.fs-xxl.mb-10#title 
             p.fs-xl.mb-0.contrast-text
@@ -10,18 +10,18 @@ template#results-header
             button.results__play-button#button(aria-label="Play pronunciation")
 
 template#results-meanings
-    section.results__details
-        p.results__part-of-speech.font-xl.italic.fw-700
+    section.results__details.mb-40
+        p.d-flex.align-items-center.gap-24.font-xl.italic.fw-700.mb-40
             strong.sr-only Part of speech:
             span.results__part-of-speech-value.fs-xl 
             span.separator-line 
 
-        h3.secondary-text.fw-400.fs-lg Meaning:
+        h3.secondary-text.fw-400.fs-lg.mb-40 Meaning:
 
-        ul.results__list--meaning
-            li.results__item.fs-md 
+        ul.results__list--meaning.mb-40
+            li.results__item.p-left-20.mb-15.fs-md 
 
-        div.results__alternatives
+        div.results__alternatives.mb-40.d-flex.align-items-start.gap-24
             h3.secondary-text.fw-400.fs-lg.mb-0 
             p.contrast-text.fw-700.fs-lg.mb-0
 
@@ -29,7 +29,7 @@ template#results-source
     section.results__source
         span.separator-line.mb-20
         p.results__source-label.fs-sm
-            strong.fw-400.secondary-text.mr-20 Source
+            strong.fw-400.secondary-text.mr-20.underline Source
             a.mr-10(href="" target="_blank" rel="noopener noreferrer")
             i.new-window-icon
 

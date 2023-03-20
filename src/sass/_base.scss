@@ -15,6 +15,10 @@ ul {
   margin: 0;
 }
 
+li::marker {
+  color: var(--contrast);
+}
+
 h1,
 h2,
 h3,
