@@ -1,16 +1,7 @@
-@use "utils" as *;
+@use "abstracts" as *;
+@forward "base";
+@forward "utils";
 @forward "components";
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  color: var(--foreground);
-  background-color: var(--background);
-  transition: all 0.3s ease-in-out;
-}
 
 .dictionary-container {
   padding: rem(20);
@@ -20,30 +11,4 @@ body {
   @media (min-width: rem(768)) {
     padding-top: rem(58);
   }
-}
-
-ul {
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-}
-
-::selection {
-  background-color: var(--purple);
-  color: var(--white);
-}
-
-button:focus {
-  outline: none;
-}
-
-.hidden {
-  display: none;
 }
