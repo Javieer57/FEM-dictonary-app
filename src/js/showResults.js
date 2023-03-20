@@ -1,4 +1,3 @@
-import API from "./API.json";
 const resultsContainer = document.getElementById("results");
 const headerTemplate = document.getElementById("results-header").content;
 const meaningsTemplate = document.getElementById("results-meanings").content;
@@ -113,5 +112,3 @@ export const showNotFound = () => {
   const clone = notFoundTemplate.cloneNode(true);
   resultsContainer.appendChild(clone);
 };
-
-showResults(API);
