@@ -1,45 +1,5 @@
 @use "../abstracts" as *;
 
-.mr-20 {
-  margin-right: rem(20);
-}
-
-.mr-10 {
-  margin-right: rem(10);
-}
-
-.mt-130 {
-  margin-top: rem(130);
-}
-
-.mb-45 {
-  margin-bottom: rem(45);
-}
-
-.mb-40 {
-  margin-bottom: rem(40);
-}
-
-.mb-25 {
-  margin-bottom: rem(25);
-}
-
-.mb-20 {
-  margin-bottom: rem(20);
-}
-
-.mb-15 {
-  margin-bottom: rem(15);
-}
-
-.mb-10 {
-  margin-bottom: rem(10);
-}
-
-.mb-0 {
-  margin-bottom: 0;
-}
-
 .vertical-separator {
   align-self: stretch;
   width: 1px;
@@ -55,14 +15,6 @@
 
 .ta-center {
   text-align: center;
-}
-
-.d-none {
-  display: none;
-}
-
-.d-inline-block {
-  display: inline-block;
 }
 
 .color-foreground {

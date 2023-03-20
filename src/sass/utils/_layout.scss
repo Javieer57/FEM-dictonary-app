@@ -1,5 +1,13 @@
 @use "../abstracts" as *;
 
+.d-none {
+  display: none;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
 .d-flex {
   display: flex;
 }
@@ -16,18 +24,6 @@
   align-items: flex-start;
 }
 
-.gap-24 {
-  gap: rem(24);
-}
-
-.gap-16 {
-  gap: rem(16);
-}
-
 .w-100 {
   width: 100%;
-}
-
-.p-left-20 {
-  padding-left: rem(20);
 }
