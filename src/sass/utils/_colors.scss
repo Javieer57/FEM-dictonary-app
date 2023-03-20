@@ -1,5 +1,6 @@
-@use "functions" as *;
+@use "../abstracts" as *;
 
+// colors
 $black-500: #3a3a3a;
 $black-600: #2d2d2d;
 $black-700: #1f1f1f;
@@ -18,6 +19,7 @@ $violet-600: #a445ed;
 $light-theme-shadow: shadow($black-900, -0.9);
 $dark-theme-shadow: shadow($violet-600);
 
+// light theme
 :root {
   --background: #{$white-900};
   --contrast-separators: #{$gray-100};
@@ -31,6 +33,7 @@ $dark-theme-shadow: shadow($violet-600);
   --white: #{$white-900};
 }
 
+// dark theme
 .dark-mode {
   --background: #{$black-800};
   --contrast-separators: #{$gray-100};

@@ -1,8 +1,8 @@
-@use "../utils" as *;
+@use "../abstracts" as *;
 
 .input-with-icon {
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: rem(16);
 
   input {
     padding: rem(20);

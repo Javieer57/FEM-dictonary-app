@@ -1,4 +1,4 @@
-@use "../utils" as *;
+@use "../abstracts" as *;
 
 @mixin icon($height, $width, $mask-image, $background-color) {
   height: $height;
