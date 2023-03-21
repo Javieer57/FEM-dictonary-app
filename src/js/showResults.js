@@ -50,8 +50,8 @@ const generateSource = (data) => {
 
 const generateHeader = (data) => {
   const { word, phonetics } = data[0];
-  const phonetic = phonetics[phonetics.length - 1].text;
-  const audio = phonetics[phonetics.length - 1].audio;
+  const phonetic = phonetics[phonetics.length - 1].text || "";
+  const audio = phonetics[phonetics.length - 1].audio || "";
 
   const header = `
     <header class="mb-40 d-flex align-items-center justify-content-between">
@@ -63,12 +63,18 @@ const generateHeader = (data) => {
         </p>
       </div>
       <div>
-        <button class="results__play-button" aria-label="Play pronunciation" onclick="new Audio('${audio}').play();"></button>
+        ${audio ? generateAudioButton(audio) : ""}
       </div>
     </header>
   `;
 
   return header;
+};
+
+const generateAudioButton = (audio) => {
+  return `
+    <button class="results__play-button" aria-label="Play pronunciation" onclick="new Audio('${audio}').play();"></button>
+  `;
 };
 
 const generateDefinitions = (definitions) =>
