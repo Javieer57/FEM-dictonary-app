@@ -25,8 +25,6 @@ const fetchWord = async (word) => {
     );
     const data = await resp.json();
 
-    hideSpinner();
-
     if (resp.status === 404) {
       clearResults();
       showNotFound();

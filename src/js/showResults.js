@@ -1,12 +1,12 @@
 const resultsContainer = document.getElementById("results");
-const loadingSpinner = document.getElementById("spinner-wrapper");
 
 export const showSpinner = () => {
-  loadingSpinner.classList.remove("d-none");
-};
-
-export const hideSpinner = () => {
-  loadingSpinner.classList.add("d-none");
+  resultsContainer.innerHTML = `
+    <div class="spinner-wrapper">
+      <p class="sr-only">Loading...</p>
+      <div class="spinner"></div>
+    </div>
+  `;
 };
 
 export const clearResults = () => {
@@ -56,14 +56,14 @@ const generateHeader = (data) => {
   const header = `
     <header class="mb-40 d-flex align-items-center justify-content-between">
       <div>
-        <h2 class="fs-xxl mb-10" id="title">${word}</h2>
+        <h2 class="fs-xxl mb-10">${word}</h2>
         <p class="fs-xl mb-0 contrast-text">
             <span class="sr-only">Pronunciation:</span>
             ${phonetic}
         </p>
       </div>
       <div>
-        <button class="results__play-button" id="button" aria-label="Play pronunciation" onclick="new Audio('${audio}').play();"></button>
+        <button class="results__play-button" aria-label="Play pronunciation" onclick="new Audio('${audio}').play();"></button>
       </div>
     </header>
   `;
