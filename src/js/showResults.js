@@ -50,8 +50,8 @@ const generateSource = (data) => {
 
 const generateHeader = (data) => {
   const { word, phonetics } = data[0];
-  const phonetic = phonetics[phonetics.length - 1].text;
-  const audio = phonetics[phonetics.length - 1].audio;
+  const phonetic = phonetics[phonetics.length - 1].text || "";
+  const audio = phonetics[phonetics.length - 1].audio || "";
 
   const header = `
     <header class="mb-40 d-flex align-items-center justify-content-between">
@@ -63,12 +63,25 @@ const generateHeader = (data) => {
         </p>
       </div>
       <div>
-        <button class="results__play-button" aria-label="Play pronunciation" onclick="new Audio('${audio}').play();"></button>
+        ${audio ? generateAudioButton(audio) : ""}
       </div>
     </header>
   `;
 
   return header;
+};
+
+const generateAudioButton = (audio) => {
+  return `
+    <button class="results__play-button" aria-label="Play pronunciation" onclick="new Audio('${audio}').play();">
+      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
+        <g fill="#A445ED" fill-rule="evenodd">
+          <circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/>
+          <path d="M29 27v21l21-10.5z"/>
+        </g>
+      </svg>
+    </button>
+  `;
 };
 
 const generateDefinitions = (definitions) =>
