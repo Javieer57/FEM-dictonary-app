@@ -11,13 +11,13 @@ const input = document.getElementById("search-input");
 const error = document.getElementById("input-error");
 
 const showError = () => {
-  clearResults();
   input.parentNode.classList.add("input-with-icon--error");
   error.innerText = "Whoops, can’t be empty…";
   input.focus();
 };
 
 const fetchWord = async (word) => {
+  clearResults();
   showSpinner();
   try {
     const resp = await fetch(
@@ -28,8 +28,10 @@ const fetchWord = async (word) => {
     hideSpinner();
 
     if (resp.status === 404) {
+      clearResults();
       showNotFound();
     } else {
+      clearResults();
       showResults(data);
     }
   } catch (error) {

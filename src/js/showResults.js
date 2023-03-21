@@ -2,7 +2,6 @@ const resultsContainer = document.getElementById("results");
 const loadingSpinner = document.getElementById("spinner-wrapper");
 
 export const showSpinner = () => {
-  clearResults();
   loadingSpinner.classList.remove("d-none");
 };
 
@@ -15,15 +14,24 @@ export const clearResults = () => {
 };
 
 export const showResults = (data) => {
-  clearResults();
   let results = ``;
   results += generateHeader(data);
-  results += generateDefinitions(data);
+  results += generateMeanings(data);
   results += generateSource(data);
   resultsContainer.innerHTML = results;
 };
 
-function generateSource(data) {
+export const showNotFound = () => {
+  resultsContainer.innerHTML = `
+    <section class="results__not-found ta-center mt-130">
+      <span class="d-inline-block fs-xxl mb-45">🤔</span>
+      <h3 class="fs-lg mb-25">No Definitions Found</h3>
+      <p class="fs-md secondary-text">Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
+    </section>
+  `;
+};
+
+const generateSource = (data) => {
   const link = data[0].sourceUrls[0];
 
   const source = `
@@ -38,9 +46,9 @@ function generateSource(data) {
   `;
 
   return source;
-}
+};
 
-function generateHeader(data) {
+const generateHeader = (data) => {
   const { word, phonetics } = data[0];
   const phonetic = phonetics[phonetics.length - 1].text;
   const audio = phonetics[phonetics.length - 1].audio;
@@ -61,21 +69,18 @@ function generateHeader(data) {
   `;
 
   return header;
-}
+};
 
-function generateDefinitions(data) {
-  const meanings = data[0].meanings;
+const generateDefinitions = (definitions) =>
+  definitions.map(
+    ({ definition }) =>
+      `<li class="results__item p-left-20 mb-15 fs-md">${definition}</li>`
+  );
 
-  const generateDefinitions = (definitions) =>
-    definitions.map(
-      ({ definition }) =>
-        `<li class="results__item p-left-20 mb-15 fs-md">${definition}</li>`
-    );
+const generateAlternatives = (type, alternatives) => {
+  if (alternatives.length === 0) return "";
 
-  const generateAlternatives = (type, alternatives) => {
-    if (alternatives.length === 0) return "";
-
-    return `
+  return `
       <div class="results__alternatives mb-40 d-flex align-items-start gap-24">
         <h3 class="secondary-text fw-400 fs-lg mb-0">${type}:</h3>
         <p class="contrast-text fw-700 fs-lg mb-0">
@@ -83,7 +88,10 @@ function generateDefinitions(data) {
         </p>
       </div>
     `;
-  };
+};
+
+const generateMeanings = (data) => {
+  const meanings = data[0].meanings;
 
   const generateMeaningPart = (meaning) => `
     <section class="results__details mb-40">
@@ -104,15 +112,4 @@ function generateDefinitions(data) {
   `;
 
   return meanings.map(generateMeaningPart).join("");
-}
-
-export const showNotFound = () => {
-  clearResults();
-  resultsContainer.innerHTML = `
-    <section class="results__not-found ta-center mt-130">
-      <span class="d-inline-block fs-xxl mb-45">🤔</span>
-      <h3 class="fs-lg mb-25">No Definitions Found</h3>
-      <p class="fs-md secondary-text">Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
-    </section>
-  `;
 };
