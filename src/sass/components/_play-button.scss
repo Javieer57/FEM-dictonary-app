@@ -3,8 +3,8 @@
 .results__play-button {
   position: relative;
   display: inline-block;
-  height: rem(75);
-  width: rem(75);
+  height: rem(48);
+  width: rem(48);
   padding: 0;
   background-color: transparent;
   border-radius: 50%;
@@ -32,5 +32,12 @@
         fill: var(--white);
       }
     }
+  }
+}
+
+@include breakpoint("tablet") {
+  .results__play-button {
+    height: rem(75);
+    width: rem(75);
   }
 }

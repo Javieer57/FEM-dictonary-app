@@ -31,33 +31,16 @@ export const showNotFound = () => {
   `;
 };
 
-const generateSource = (data) => {
-  const link = data[0].sourceUrls[0];
-
-  const source = `
-    <section class="results__source">
-      <span class="separator-line mb-20"></span>
-      <p class="results__source-label fs-sm">
-        <strong class="fw-400 secondary-text mr-20 underline">Source</strong>
-        <a class="mr-10" href="${link}" target="_blank" rel="noopener noreferrer">${link}</a>
-        <i class="new-window-icon"></i>
-      </p>
-    </section>
-  `;
-
-  return source;
-};
-
 const generateHeader = (data) => {
   const { word, phonetics } = data[0];
   const phonetic = phonetics[phonetics.length - 1].text || "";
   const audio = phonetics[phonetics.length - 1].audio || "";
 
   const header = `
-    <header class="mb-40 d-flex align-items-center justify-content-between">
+    <header class="results__header">
       <div>
-        <h2 class="fs-xxl mb-10">${word}</h2>
-        <p class="fs-xl mb-0 contrast-text">
+        <h2 class="results__title">${word}</h2>
+        <p class="results__pronuntiation">
             <span class="sr-only">Pronunciation:</span>
             ${phonetic}
         </p>
@@ -85,20 +68,15 @@ const generateAudioButton = (audio) => {
 };
 
 const generateDefinitions = (definitions) =>
-  definitions.map(
-    ({ definition }) =>
-      `<li class="results__item p-left-20 mb-15 fs-md">${definition}</li>`
-  );
+  definitions.map(({ definition }) => `<li>${definition}</li>`);
 
 const generateAlternatives = (type, alternatives) => {
   if (alternatives.length === 0) return "";
 
   return `
-      <div class="results__alternatives mb-40 d-flex align-items-start gap-24">
-        <h3 class="secondary-text fw-400 fs-lg mb-0">${type}:</h3>
-        <p class="contrast-text fw-700 fs-lg mb-0">
-          ${alternatives.join(", ")}
-        </p>
+      <div class="results__alternatives">
+        <h3 class="results__subtitle-2">${type}:</h3>
+        <p>${alternatives.join(", ")}</p>
       </div>
     `;
 };
@@ -107,16 +85,19 @@ const generateMeanings = (data) => {
   const meanings = data[0].meanings;
 
   const generateMeaningPart = (meaning) => `
-    <section class="results__details mb-40">
-      <p class="d-flex align-items-center gap-24 font-xl italic fw-700 mb-40">
-        <strong class="sr-only">Part of speech:</strong>
-        <span class="results__part-of-speech-value fs-xl">
-          ${meaning.partOfSpeech}
-        </span>
+    <section class="results__details">
+      <div class="results__header-2">
+        <p class="results__subtitle-1">
+          <strong class="sr-only">Part of speech:</strong>
+          <span>
+            ${meaning.partOfSpeech}
+          </span>
+        </p>
         <span class="separator-line"></span>
-      </p>
-      <h3 class="secondary-text fw-400 fs-lg mb-40">Meaning:</h3>
-      <ul class="results__list--meaning mb-40">
+      </div>
+
+      <h3 class="results__subtitle-2">Meaning:</h3>
+      <ul class="results__list">
         ${generateDefinitions(meaning.definitions).join("")}
       </ul>
       ${generateAlternatives("Synonyms", meaning.synonyms)}
@@ -125,4 +106,23 @@ const generateMeanings = (data) => {
   `;
 
   return meanings.map(generateMeaningPart).join("");
+};
+
+const generateSource = (data) => {
+  const link = data[0].sourceUrls[0];
+
+  const source = `
+    <section class="results__source">
+      <span class="separator-line"></span>
+      <p>
+        <strong>Source</strong>
+        <a href="${link}" target="_blank" rel="noopener noreferrer">
+          ${link}
+          <i class="new-window-icon"></i>
+        </a>
+      </p>
+    </section>
+  `;
+
+  return source;
 };

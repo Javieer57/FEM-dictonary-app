@@ -11,7 +11,7 @@
     color: var(--primary-text-color);
     border: none;
     font-weight: 700;
-    font-size: rem(18);
+    font-size: rem(14);
 
     &:hover,
     &:focus-visible {
@@ -38,7 +38,7 @@
     border: none;
     text-align: left;
     font-weight: 700;
-    font-size: rem(18);
+    font-size: rem(14);
     color: var(--foreground);
 
     &:hover,
@@ -53,6 +53,18 @@
       flex-direction: column;
       background-color: var(--background);
       box-shadow: var(--shadow);
+    }
+  }
+}
+
+@include breakpoint("tablet") {
+  .dropdown {
+    &__button {
+      font-size: rem(18);
+    }
+
+    &__menu-item button {
+      font-size: rem(18);
     }
   }
 }

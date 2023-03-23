@@ -13,22 +13,6 @@
   width: 100%;
 }
 
-.ta-center {
-  text-align: center;
-}
-
-.color-foreground {
-  color: var(--foreground);
-}
-
-.contrast-text {
-  color: var(--contrast);
-}
-
-.secondary-text {
-  color: var(--secondary-text);
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -39,8 +23,4 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-.underline {
-  text-decoration: underline;
 }
