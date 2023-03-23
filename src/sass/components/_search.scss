@@ -2,7 +2,7 @@
 
 .input-with-icon {
   position: relative;
-  margin-bottom: rem(16);
+  margin-bottom: rem(28);
 
   input {
     padding: rem(16);
@@ -64,6 +64,8 @@
 
 @include breakpoint("tablet") {
   .input-with-icon {
+    margin-bottom: rem(40);
+
     input {
       padding: rem(20);
       font-size: rem(20);

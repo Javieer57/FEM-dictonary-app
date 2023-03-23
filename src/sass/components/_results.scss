@@ -41,6 +41,7 @@
   &__list {
     margin-bottom: rem(24);
     font-size: rem(15);
+    line-height: rem(24);
     display: flex;
     flex-direction: column;
     gap: rem(15);
@@ -92,7 +93,7 @@
   }
 }
 
-@mixin breakpoint($tablet) {
+@include breakpoint("tablet") {
   .results {
     &__header {
       margin-bottom: rem(40);
@@ -126,7 +127,6 @@
     &__list {
       margin-bottom: rem(40);
       font-size: rem(18);
-      line-height: rem(24);
       padding-left: rem(45);
 
       li {
