@@ -1,12 +1,5 @@
 @use "../abstracts" as *;
 
-@mixin horizontal-align($mb: 0, $gap: 0) {
-  display: flex;
-  align-items: center;
-  margin-bottom: $mb;
-  gap: $gap;
-}
-
 .results {
   &__header {
     @include horizontal-align(rem(34), rem(0));
@@ -99,7 +92,7 @@
   }
 }
 
-@media screen and (min-width: rem(768)) {
+@mixin breakpoint($tablet) {
   .results {
     &__header {
       margin-bottom: rem(40);

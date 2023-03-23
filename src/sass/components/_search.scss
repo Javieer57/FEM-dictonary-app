@@ -62,7 +62,7 @@
   }
 }
 
-@media screen and (min-width: rem(768)) {
+@include breakpoint("tablet") {
   .input-with-icon {
     input {
       padding: rem(20);
