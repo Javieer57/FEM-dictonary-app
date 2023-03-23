@@ -91,6 +91,29 @@
       gap: rem(10);
     }
   }
+
+  &__not-found {
+    text-align: center;
+    margin-top: rem(130);
+
+    .not-found__icon {
+      display: inline-block;
+      width: rem(64);
+      aspect-ratio: 1/1;
+      margin-bottom: rem(45);
+    }
+
+    .not-found__title {
+      font-size: rem(20);
+      margin-bottom: rem(25);
+    }
+
+    .not-found__text {
+      color: var(--secondary-text);
+      font-size: rem(18);
+      line-height: rem(24);
+    }
+  }
 }
 
 @include breakpoint("tablet") {

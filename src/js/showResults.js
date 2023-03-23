@@ -23,10 +23,10 @@ export const showResults = (data) => {
 
 export const showNotFound = () => {
   resultsContainer.innerHTML = `
-    <section class="results__not-found ta-center mt-130">
-      <span class="d-inline-block fs-xxl mb-45">🤔</span>
-      <h3 class="fs-lg mb-25">No Definitions Found</h3>
-      <p class="fs-md secondary-text">Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
+    <section class="results__not-found">
+      <img src="images/not-found.svg" alt="" class="not-found__icon">
+      <h3 class="not-found__title">No Definitions Found</h3>
+      <p class="not-found__text">Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
     </section>
   `;
 };
