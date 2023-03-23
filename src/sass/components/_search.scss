@@ -5,14 +5,13 @@
   margin-bottom: rem(16);
 
   input {
-    padding: rem(20);
+    padding: rem(16);
     padding-right: rem(40); // 40px for the icon
-    line-height: 1.25;
     appearance: none;
     color: var(--foreground);
     border: 1px solid transparent;
     border-radius: rem(16);
-    font-size: rem(20);
+    font-size: rem(16);
     width: 100%;
     transition: all 0.3s ease;
     background-color: var(--secondary-background);
@@ -27,7 +26,7 @@
 
     &::placeholder {
       color: rgba(var(--foreground), 0.25);
-      font-size: rem(20);
+      font-size: rem(16);
     }
   }
 
@@ -45,6 +44,7 @@
     display: none;
     color: var(--error);
     position: absolute;
+    margin-top: rem(15);
   }
 
   &.input-with-icon--error {
@@ -58,6 +58,19 @@
 
     .input__error {
       display: block;
+    }
+  }
+}
+
+@media screen and (min-width: rem(768)) {
+  .input-with-icon {
+    input {
+      padding: rem(20);
+      font-size: rem(20);
+
+      &::placeholder {
+        font-size: rem(20);
+      }
     }
   }
 }
