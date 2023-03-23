@@ -1,148 +1,149 @@
-@use "../utils" as *;
+@use "../abstracts" as *;
 
 .results {
   &__header {
-    margin-bottom: rem(40);
-    display: flex;
-    align-items: center;
+    @include horizontal-align(rem(34), rem(0));
     justify-content: space-between;
   }
 
   &__title {
-    font-size: rem(64);
-    line-height: rem(77);
-    color: var(--primary-text-color);
-    margin: rem(10);
+    font-size: rem(32);
+    margin-bottom: rem(10);
   }
 
-  &__pronunciation {
-    margin: 0;
-
-    &-label {
-      font-weight: 400;
-      font-size: rem(24);
-      line-height: rem(29);
-      color: var(--purple);
-    }
-  }
-}
-
-.results__details {
-  > *:not(:last-child) {
-    margin-bottom: rem(40);
-  }
-
-  &:not(:last-child) {
-    margin-bottom: rem(40);
-  }
-}
-
-.results__part-of-speech {
-  margin-top: 0;
-  align-items: center;
-  display: inline-flex;
-  gap: rem(24);
-  width: 100%;
-
-  &-value {
-    font-style: italic;
-    font-weight: 700;
-    font-size: rem(24);
-    line-height: rem(29);
-  }
-}
-
-.results__subtitle {
-  font-weight: 400;
-  font-size: rem(20);
-  color: var(--light-gray);
-  margin-top: 0;
-}
-
-.results__list--meaning {
-  .results__item {
-    padding-left: rem(20);
+  &__pronuntiation {
     font-size: rem(18);
     line-height: rem(24);
-
-    &::marker {
-      color: #8f19e8;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: rem(15);
-    }
-  }
-}
-
-.results__alternatives {
-  display: flex;
-  align-items: flex-start;
-  gap: rem(20);
-
-  &:not(:last-child) {
-    margin-bottom: rem(40);
+    color: var(--contrast);
   }
 
-  .results__subtitle {
-    margin: 0;
+  &__details {
+    margin-bottom: rem(30);
   }
 
-  .results__list--alternatives {
+  &__header-2 {
+    @include horizontal-align(rem(30), rem(20));
+  }
+
+  &__subtitle-1 {
+    font-style: italic;
     font-weight: 700;
-    font-size: rem(20);
-    line-height: rem(24);
-    margin: 0;
-    color: #a445ed;
+    font-size: rem(18);
   }
-}
 
-.separator-line {
-  display: block;
-  background-color: #e9e9e9;
-  height: 1px;
-  width: 100%;
-}
+  &__subtitle-2 {
+    font-size: rem(16);
+    color: var(--secondary-text);
+    font-weight: 400;
+    margin-bottom: rem(25);
+  }
 
-.results__source {
-  &-label {
-    margin-top: rem(20);
-    line-height: rem(17);
+  &__list {
+    margin-bottom: rem(24);
+    font-size: rem(15);
+    line-height: rem(24);
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+    padding-left: rem(15);
+
+    li {
+      padding-left: rem(10);
+    }
+  }
+
+  &__alternatives {
+    @include horizontal-align(rem(30), rem(25));
+    align-items: flex-start;
+
+    * {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: rem(16);
+      color: var(--contrast);
+      font-weight: 700;
+    }
+  }
+
+  &__source {
     font-size: rem(14);
+    display: flex;
+    flex-direction: column;
+    gap: rem(25);
+
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(10) rem(20);
+    }
 
     strong {
-      color: var(--light-gray);
-      text-decoration: underline;
       font-weight: 400;
-      text-decoration-color: var(--light-gray);
+      color: var(--secondary-text);
+      text-decoration: underline;
     }
 
     a {
-      color: var(--foreground);
-      margin-left: rem(20);
-      margin-right: rem(10);
+      display: flex;
+      align-items: center;
+      gap: rem(10);
     }
   }
 }
 
-.results__not-found {
-  margin-top: rem(130);
-  text-align: center;
+@include breakpoint("tablet") {
+  .results {
+    &__header {
+      margin-bottom: rem(40);
+    }
 
-  span {
-    font-size: rem(64);
-    margin-bottom: rem(45);
-    display: inline-block;
-  }
+    &__title {
+      font-size: rem(64);
+    }
 
-  h3 {
-    margin-bottom: rem(25);
-    font-size: rem(20);
-  }
+    &__pronuntiation {
+      font-size: rem(24);
+      line-height: auto;
+    }
 
-  p {
-    color: var(--light-gray);
-    font-size: rem(18);
-    line-height: rem(24);
+    &__details {
+      margin-bottom: rem(40);
+    }
+
+    &__header-2 {
+      @include horizontal-align(rem(40), rem(30));
+    }
+
+    &__subtitle-1 {
+      font-size: rem(24);
+    }
+
+    &__subtitle-2 {
+      font-size: rem(20);
+    }
+
+    &__list {
+      margin-bottom: rem(40);
+      font-size: rem(18);
+      padding-left: rem(45);
+
+      li {
+        padding-left: rem(15);
+      }
+    }
+
+    &__alternatives {
+      @include horizontal-align(rem(40), rem(40));
+
+      p {
+        font-size: rem(20);
+      }
+    }
+
+    &__source {
+      gap: rem(20);
+    }
   }
 }

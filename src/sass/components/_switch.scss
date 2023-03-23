@@ -1,4 +1,4 @@
-@use "../utils" as *;
+@use "../abstracts" as *;
 
 .toggle-switch__container {
   display: flex;
@@ -11,7 +11,7 @@
   display: inline-block;
   width: rem(40);
   aspect-ratio: 1/0.5;
-  background-color: var(--light-gray);
+  background-color: var(--secondary-text);
   border-radius: rem(30);
   border: 1px solid transparent;
   outline: none;
@@ -26,7 +26,7 @@
   &:hover {
     .slider {
       &:after {
-        background-color: var(--purple);
+        background-color: var(--contrast);
       }
     }
   }
@@ -65,10 +65,10 @@
   }
 
   &[aria-pressed="true"] {
-    background-color: var(--purple);
+    background-color: var(--contrast);
 
     & + .moon-icon {
-      background-color: var(--purple);
+      background-color: var(--contrast);
     }
 
     .slider:before {
@@ -79,16 +79,4 @@
       left: rem(25);
     }
   }
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }

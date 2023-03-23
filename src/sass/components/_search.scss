@@ -1,18 +1,17 @@
-@use "../utils" as *;
+@use "../abstracts" as *;
 
 .input-with-icon {
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: rem(28);
 
   input {
-    padding: rem(20);
+    padding: rem(16);
     padding-right: rem(40); // 40px for the icon
-    line-height: 1.25;
     appearance: none;
     color: var(--foreground);
     border: 1px solid transparent;
     border-radius: rem(16);
-    font-size: rem(20);
+    font-size: rem(16);
     width: 100%;
     transition: all 0.3s ease;
     background-color: var(--secondary-background);
@@ -21,13 +20,13 @@
 
     &:focus,
     &:focus-visible {
-      border-color: var(--purple);
+      border-color: var(--contrast);
       outline: none;
     }
 
     &::placeholder {
       color: rgba(var(--foreground), 0.25);
-      font-size: rem(20);
+      font-size: rem(16);
     }
   }
 
@@ -43,21 +42,37 @@
 
   .input__error {
     display: none;
-    color: var(--red);
+    color: var(--error);
     position: absolute;
+    margin-top: rem(15);
   }
 
   &.input-with-icon--error {
     input {
-      border-color: var(--red);
+      border-color: var(--error);
 
       &:focus {
-        border-color: var(--red);
+        border-color: var(--error);
       }
     }
 
     .input__error {
       display: block;
+    }
+  }
+}
+
+@include breakpoint("tablet") {
+  .input-with-icon {
+    margin-bottom: rem(40);
+
+    input {
+      padding: rem(20);
+      font-size: rem(20);
+
+      &::placeholder {
+        font-size: rem(20);
+      }
     }
   }
 }
