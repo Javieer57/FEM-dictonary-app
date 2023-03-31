@@ -18,7 +18,7 @@
     button.dropdown__button(aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-menu" aria-label="Change font")
         span
         i.arrow-down-icon
-    ul.dropdown__menu(role="menu" aria-hidden="true")
+    ul.dropdown__menu#dropdown-menu(role="menu" aria-hidden="true")
         each item in buttons
             li.dropdown__menu-item
                 button(style="font-family: " + item.font + ";" role="menuitem" data-font=item.font data-font-alias=item.alias aria-label='Change font to #{item.alias}')
