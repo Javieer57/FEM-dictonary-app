@@ -31,10 +31,11 @@ html(lang="en")
       h1.sr-only Dictionary app
       include pug/header.pug
 
-      form#search-form
-        include pug/search.pug
+      main 
+        form#search-form
+          include pug/search.pug
 
-      .results#results(aria-live="polite" aria-atomic="true")
+        .results#results(aria-live="polite" aria-atomic="true")
 
 
 
